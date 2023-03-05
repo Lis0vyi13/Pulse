@@ -1,0 +1,71 @@
+.form-block
+    background: url(../img/form-bg.jpg) center center / cover no-repeat
+.form__content
+    padding: 100px 0 95px 0
+    +_1
+        text-align: center
+
+    +_470
+        text-align: left
+        .title
+            text-align: left
+
+    ._form-title
+        color: $mainColor
+        +_1
+            font-size: 22px
+        +_470
+            font-size: 32px
+        +_576
+            font-size: 36px
+
+    .form-description
+        font-size: 20px
+        color: $mainColor
+
+        +_1
+            margin-top: 35px
+        +_470
+            max-width: 375px
+            margin-top: 65px
+        +_576
+            margin-top: 85px
+
+    .form
+        display: inline-flex
+        flex-direction: column
+        gap: 15px
+
+        input
+            height: 50px
+            padding-left: 20px
+            border-radius: 5px
+            border: none
+
+            &::placeholder
+                font-size: 14px
+                color: #4b4b4b
+                position: relative
+            &:first-child
+                margin-top: 40px
+            &:focus
+                box-shadow: 1px 1px 10px $secondColor
+                border: 1px solid $secondColor
+
+                outline: none
+                &::placeholder
+                    transition: all .5s ease
+                    top: -15px
+                    font-size: 12px
+            +_1
+                width: 270px
+            +_470
+                width: 300px
+
+        .form-button
+            +button
+            border: 0
+            font-size: 16px
+            padding-top: 14px
+            cursor: pointer
+            padding-bottom: 14px
