@@ -1,0 +1,55 @@
+.slider
+    +_1
+        margin-top: 31px
+    +_470
+        margin-top: 61px
+    +_768
+        margin-top: 81px
+    img
+        display: block
+        margin: 0 auto
+    [data-controls=prev], [data-controls=next]
+        border: none
+        background: transparent
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        z-index: 1
+        +_1
+            display: none
+        +_768
+            display: block
+
+    &__container
+        position: relative
+        [data-controls=prev]
+            left: 0
+        [data-controls=next]
+            right: 0
+        .tns-nav
+            position: absolute
+            bottom: -10px
+            left: 50%
+            transform: translateX(-50%)
+            +_1
+                display: block
+            +_768
+                display: none
+            button
+                +_1
+                    width: 30px
+                    height: 4px
+                +_470
+                    width: 40px
+                    height: 7px
+
+            &-active
+                background-color: $secondColor
+        .tns-item img
+            padding: 0 40px
+
+.my-slider
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
