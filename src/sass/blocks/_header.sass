@@ -3,6 +3,11 @@
     justify-content: space-between
     padding-top: 21px
     align-items: center
+    row-gap: 10px
+    +_1
+        flex-direction: column
+    +_470
+        flex-direction: row
 
     &__sponsors
         @include _1
@@ -11,7 +16,7 @@
         @include _768
             display: block
         p
-            color: #fff
+            color: $mainColor
             text-align: center
             font-weight: 500
             &.nav__sponsors-title
@@ -22,23 +27,35 @@
                 line-height: 161%
 
     &__contacts
-        text-align: right
         display: flex
+        row-gap: 3px
 
-        @include _1
+        +_1
             flex-direction: column
-        @include _625
-            flex-direction: row
-        @include _768
+            width: 100%
+            text-align: center
+
+        +_470
+            text-align: right
+            width: auto
+            align-items: center
+
+        +_768
             flex-direction: column
 
         &-tel
             font-family: 'Museo Sans Cyrl 700'
-            font-size: 18px
             line-height: 100%
+            font-size: 18px
 
         &-button
             +button
-            font-size: 12px
-            padding: 7px 21px
-            margin-top: 5px
+            +_1
+                font-size: 14px
+                margin-top: 2px
+                display: block
+                padding: 9px 21px
+            +_470
+                display: inline-block
+                font-size: 12px
+                padding: 7px 21px

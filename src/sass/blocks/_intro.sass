@@ -8,23 +8,47 @@
         z-index: -1
         background: url('../img/bg.jpg') left / cover no-repeat
     &__content
-        padding-top: 91px
         display: flex
-        color: #fff
+        color: $mainColor
         flex-direction: column
-        text-align: right
+
+        +_1
+            padding-top: 41px
+            text-align: center
+        +_470
+            text-align: right
+            padding-top: 71px
+
+        +_768
+            padding-top: 91px
+
     &__text
         line-height: 100%
         text-transform: uppercase
     &__title
         font-weight: 700
-        font-size: 42px
-        margin-bottom: 27px
+        line-height: 100%
+        +_1
+            font-size: 32px
+            margin-bottom: 17px
+        +_470
+            font-size: 37px
+        +_768
+            font-size: 42px
 
     &__subtitle
         font-weight: 500
-        font-size: 24px
-        margin-bottom: 60px
+        line-height: 100%
+
+        +_1
+            font-size: 18px
+            margin-bottom: 41px
+        +_470
+            font-size: 21px
+            margin-bottom: 60px
+
+        +_768
+            font-size: 24px
 
     &__details
         text-align: right
@@ -41,9 +65,14 @@
                 max-width: 126px
                 margin-top: 20px
     &__order
-        margin-top: 66px
+
+        +_1
+            margin-top: 56px
+        +_470
+            margin-top: 66px
         & p
-            margin-top: 8px
+            margin-top: 18px
+            text-align: right
         &-link
             text-decoration: underline
             text-transform: uppercase
@@ -55,3 +84,9 @@
     &__button
         +button
         padding: 12px 43px
+        +_1
+            font-size: 15px
+            display: block
+        +_470
+            font-size: 16px
+            display: inline-block
