@@ -1,0 +1,117 @@
+.catalog
+    margin-top: 81px
+    hr
+        background: #E8E8E8
+        height: 1px
+        width: 100%
+        border: none
+    &__tabs
+        display: flex
+        justify-content: center
+        margin-top: 46px
+        gap: 10px
+        +_1
+            flex-direction: column
+
+            text-align: center
+            margin: 46px auto 0 auto
+        +_470
+            max-width: 80%
+        +_625
+            flex-direction: row
+            max-width: 100%
+
+    &__tab
+        background-color: #fff
+        text-transform: uppercase
+        color: #6B6B6B
+        border: 2px solid #D0D0D0
+        transform: skewX(-25deg)
+        cursor: pointer
+        transition: all .3s ease
+
+        &-active
+            background-color: $secondColor
+            color: $mainColor
+            border: 2px solid $secondColor
+
+        p
+            transform: skewX(25deg)
+            font-size: 18px
+            padding: 12px 27px
+
+    &__list
+        display: grid
+        align-items: center
+        justify-content: center
+        margin-top: 57px
+        gap: 20px
+        +_1
+            grid-template-columns: repeat(1, auto)
+        +_625
+            grid-template-columns: repeat(2, auto)
+        +_992
+            grid-template-columns: repeat(3, auto)
+            justify-content: space-between
+
+        &-item
+            max-width: 303px
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            text-align: center
+            display: flex
+            border: 2px solid #E8E8E8
+            color: $blackColor
+
+            padding: 0 20px
+            &_top
+                margin-top: 20px
+                margin-bottom: 17px
+            &_bottom
+                margin-top: 18px
+                display: flex
+                justify-content: space-between
+                width: 100%
+                margin-bottom: 20px
+
+            &-title
+                p
+                    margin: 15px 0
+                    font-weight: 700
+
+            &-subtitle
+                p
+                    font-weight: 300
+
+            &-link
+                margin-top: 10px
+                a
+                    font-weight: 500
+                    font-size: 14px
+                    color: $secondColor
+                    text-transform: uppercase
+                    text-decoration: underline
+                    &:hover
+                        color: #ff0000
+    &__prices
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+
+    &__old-price
+        display: flex
+        color: #555555
+        font-weight: 300
+        font-size: 14px
+        text-decoration: line-through
+
+    &__price
+        font-weight: 700
+        font-size: 20px
+        color: #050505
+    &__buy-button
+        +button
+        border: none
+        font-size: 14px
+        padding: 11px 40px

@@ -28,20 +28,25 @@
             right: 0
         .tns-nav
             position: absolute
-            bottom: -10px
+            bottom: -20px
             left: 50%
             transform: translateX(-50%)
-            display: block
+            display: flex
+            gap: 2px
+
             button
                 +_1
                     width: 30px
                     height: 4px
+
                 +_470
                     width: 40px
                     height: 7px
 
             &-active
                 background-color: $secondColor
+                border: none
+                border-radius: 5px
         .tns-item img
             padding: 0 40px
 
