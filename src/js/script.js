@@ -1,22 +1,16 @@
-var slider = tns({
-  container: '.my-slider',
-  items: 1,
-  slideBy: 'page',
-  controlsText: [
-    '<img src="icons/slider/chevron-left-solid.png">',
-    '<img src="icons/slider/right.svg">',
-  ],
-  autoplayButtonOutput: false,
-  autoplay: true,
-  preventScrollOnTouch: 'force',
+'use strict';
+const tabs = document.querySelectorAll('.catalog__tab');
+const tabsParent = document.querySelector('.catalog__tabs');
+const cardLinks = document.querySelectorAll('.catalog__list-item-link a');
+const cards = document.querySelectorAll('.catalog__list-item');
+const descr = document.querySelectorAll('.catalog__list-item-description');
 
-  responsive: {
-    1: {
-      mouseDrag: true,
-    },
-    768: {
-      gutter: 30,
-      mouseDrag: false,
-    },
-  },
+tabsParent.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (e.target.closest('.catalog__tab')) {
+    tabs.forEach((tab) => {
+      tab.classList.remove('catalog__tab-active');
+    });
+    e.target.closest('.catalog__tab').classList.add('catalog__tab-active');
+  }
 });
