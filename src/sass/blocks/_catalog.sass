@@ -3,8 +3,13 @@
     hr
         background: #E8E8E8
         height: 1px
-        width: 100%
+        width: 267px
         border: none
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        bottom: 0
+
     &__tabs
         display: flex
         justify-content: center
@@ -66,10 +71,10 @@
             grid-template-columns: repeat(2, auto)
         +_992
             grid-template-columns: repeat(3, auto)
-            justify-content: space-between
 
         &-item
             max-width: 303px
+            overflow: hidden
             justify-content: center
             align-items: center
             flex-direction: column
@@ -130,3 +135,49 @@
         border: none
         font-size: 14px
         padding: 11px 40px
+    &-upper
+        display: flex
+        width: 303px
+        height: 360px
+        transform: translateX(0)
+        transition: all .3s
+
+    &__item
+        &-front
+            min-width: 303px
+
+        &-list
+            display: flex
+            flex-direction: column
+            gap: 5px
+        &-back
+            text-align: left
+            min-width: 303px
+            padding: 18px
+            position: relative
+
+            li
+                font-weight: 300
+                font-size: 14px
+                color: $grayColor55
+                line-height: 150%
+                padding-left: 15px
+                position: relative
+                &::before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 6px
+                    width: 6px
+                    height: 7px
+                    background-color: $secondColor
+            .catalog__list-item-link
+                bottom: 25px
+                position: absolute
+                left: 50%
+                transform: translateX(-50%)
+.front-translate
+    transform: translateX(-100%)
+
+#back-link, #front-link
+    padding: 15px

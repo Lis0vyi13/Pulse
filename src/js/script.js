@@ -1,16 +1,17 @@
 'use strict';
-const tabs = document.querySelectorAll('.catalog__tab');
-const tabsParent = document.querySelector('.catalog__tabs');
-const cardLinks = document.querySelectorAll('.catalog__list-item-link a');
-const cards = document.querySelectorAll('.catalog__list-item');
-const descr = document.querySelectorAll('.catalog__list-item-description');
 
-tabsParent.addEventListener('click', function (e) {
-  e.preventDefault();
-  if (e.target.closest('.catalog__tab')) {
-    tabs.forEach((tab) => {
-      tab.classList.remove('catalog__tab-active');
+const frontLinks = document.querySelectorAll('#front-link');
+const backLinks = document.querySelectorAll('#back-link');
+const catalogUpperContent = document.querySelectorAll('.catalog-upper');
+
+function catalogLinks(linkArray) {
+  linkArray.forEach((link, i) => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      catalogUpperContent[i].classList.toggle('front-translate');
     });
-    e.target.closest('.catalog__tab').classList.add('catalog__tab-active');
-  }
-});
+  });
+}
+
+catalogLinks(frontLinks);
+catalogLinks(backLinks);
