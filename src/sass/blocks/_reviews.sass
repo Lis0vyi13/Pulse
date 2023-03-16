@@ -1,2 +1,42 @@
 .reviews
     margin-top: 79px
+    &__cards
+        margin-top: 60px
+        display: flex
+        flex-direction: column
+        row-gap: 60px
+
+    &__card
+        display: flex
+        row-gap: 10px
+        +_1
+            flex-direction: column
+        +_625
+            flex-direction: row
+
+        &-img
+            margin: 0 auto
+            img
+                min-height: 169px
+                min-width: 169px
+
+        &-text
+            +_1
+                text-align: center
+            +_625
+                text-align: left
+                margin-left: 61px
+        &-name
+            font-weight: 700
+            font-size: 18px
+            color: $blackColor
+        &-maraphons-count
+            font-weight: 500
+            font-size: 14px
+            color: #646464
+
+        &-review
+            margin-top: 10px
+            line-height: 150%
+            font-weight: 300
+            color: $blackColor

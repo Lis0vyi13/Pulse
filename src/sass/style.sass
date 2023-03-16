@@ -8,6 +8,8 @@
 @import 'blocks/slider'
 @import 'blocks/catalog'
 @import 'blocks/reviews'
+@import 'blocks/map'
+@import 'blocks/preloader'
 
 *
     //default font-size: 16px | font-weight: 400
@@ -18,3 +20,36 @@
     padding: 0 15px
     margin: 0 auto
     position: relative
+
+.button-up
+    transition: all .3s
+    position: fixed
+    cursor: pointer
+    z-index: 1
+    background: $secondColor
+    height: 50px
+    width: 50px
+    border-radius: 50%
+    right: 20px
+    bottom: 30px
+    transition: all 0.2s linear
+    padding: 10px
+    opacity: 0
+
+    &:hover
+        transform: translate3d(0, -10px, 0)
+    &::after
+        content: ""
+        position: absolute
+        left: 50%
+        z-index: 11
+        display: block
+        width: 25px
+        height: 25px
+        border-top: 4px solid #fff
+        border-left: 4px solid #fff
+        top: 60%
+        transform: translate(-50%, -50%) rotate(45deg)
+.hidden
+    transition: all .8s ease
+    opacity: 0

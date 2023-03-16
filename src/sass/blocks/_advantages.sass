@@ -43,3 +43,42 @@
             text-transform: uppercase
             color: #FF0000
             text-decoration: underline
+
+#boot
+    animation: swing 1s ease-in-out infinite alternate
+
+@keyframes swing
+    0%
+        transform: rotate(0deg)
+
+    50%
+        transform: rotate(15deg)
+
+    100%
+        transform: rotate(-15deg)
+
+#heart
+    animation: heartbeat 1s ease-in-out infinite
+
+@keyframes heartbeat
+    0%
+        transform: scale(1)
+
+    50%
+        transform: scale(1.2)
+
+    100%
+        transform: scale(1)
+
+#cup
+    animation: lift 2s ease-in-out infinite alternate
+
+@keyframes lift
+    0%
+        transform: translateY(10%)
+
+    50%
+        transform: translateY(-10%)
+
+    100%
+        transform: translateY(0%)
