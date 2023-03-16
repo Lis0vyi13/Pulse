@@ -35,7 +35,7 @@ btnUp.addEventListener('click', () => {
 
 window.onload = () => {
   preloader.classList.add('hidden');
-  body.classList.remove('lock');
+  document.querySelector('body').classList.remove('lock');
   setTimeout(() => {
     preloader.remove();
   }, 500);
