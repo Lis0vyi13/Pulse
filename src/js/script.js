@@ -4,7 +4,6 @@ const frontLinks = document.querySelectorAll('#front-link');
 const backLinks = document.querySelectorAll('#back-link');
 const catalogUpperContent = document.querySelectorAll('.catalog-upper');
 const btnUp = document.querySelector('.button-up');
-const preloader = document.querySelector('#preloader');
 
 function catalogLinks(linkArray) {
   linkArray.forEach((link, i) => {
@@ -32,11 +31,3 @@ btnUp.addEventListener('click', () => {
     behavior: 'smooth',
   });
 });
-
-window.onload = () => {
-  preloader.classList.add('hidden');
-  document.querySelector('body').classList.remove('lock');
-  setTimeout(() => {
-    preloader.remove();
-  }, 500);
-};
