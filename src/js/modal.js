@@ -53,7 +53,8 @@ function closeModal(modal) {
 function showFeedback(form) {
   if (form.classList.contains('active')) {
     beforeFeedbackElements.forEach(function (item) {
-      item.addEventListener('click', () => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
         hidden(form);
         show(feedback);
         closeModal(feedback);
