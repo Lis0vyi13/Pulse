@@ -41,6 +41,7 @@ function closeModal(modal) {
     closeButton.forEach(function (item) {
       modal.addEventListener('click', function (e) {
         const target = e.target;
+        e.preventDefault();
         if (target === item || !target.closest('.modal-block')) {
           hidden(modal);
         }
