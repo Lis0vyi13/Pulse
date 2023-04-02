@@ -1,25 +1,45 @@
 .modal
-    display: none
-    opacity: 0
-    transition: all .3s ease
+    scale: 1
+    min-height: 100%
+    min-width: 100%
+    z-index: -1
+    position: fixed
+    transition: opacity .3s ease
 
     &-block
         position: absolute
         z-index: 100001
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
+
         background-color: #F2F2F2
+        +_1
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            width: 240px
+
+        +_470
+            width: 385px
 
     &-img
         position: absolute
         cursor: pointer
         top: 0
-        right: -40px
+        +_1
+            right: -30px
+
+        +_470
+            right: -35px
 
     &-content
         position: relative
-        padding: 35px 23px 40px 28px
+
+        +_1
+            padding: 15px 12px
+
+        +_470
+            padding: 25px 23px 40px 28px
+        +_768
+            padding: 35px 23px 40px 28px
 
         & .form__content .form input:first-child
             margin-top: 26px
@@ -28,18 +48,49 @@
         text-align: center
         font-size: 19px
         font-weight: 700
+        +_1
+            font-size: 17px
+
+        +_470
+            font-size: 18px
+        +_768
+            font-size: 19px
 
     &-subtitle
         margin-top: 5px
         font-weight: 700
         text-align: center
-        font-size: 14px
+
+        +_1
+            font-size: 14px
+
+        +_768
+            font-size: 16px
+
+    .form
+        width: 100%
+        input
+            width: 100%
+
+    .form__content .form .form-button
+        +_1
+            font-size: 15px
+
+        +_576
+            font-size: 16px
 
     &-feedback
-        padding: 35px 64px
+        +_1
+            padding: 15px 20px
+
+        +_470
+            padding: 35px 64px
 
         p
             max-width: 243px
+
+        .form__content
+            min-width: 200px
 
 .no-mg
     margin: 0
@@ -47,9 +98,10 @@
     padding: 0
 
 .active
-    display: block
-    min-height: 100%
-    min-width: 100%
+    z-index: 1
+    opacity: 1
     background: rgba(0, 0, 0, 0.4)
-    z-index: 21
-    position: fixed
+
+#feedback, #modal-order, #modal-form
+    opacity: 0
+    transition: opacity .3s ease

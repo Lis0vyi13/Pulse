@@ -34,62 +34,98 @@
   <body>
     <div class="button-up hidden"></div>
 
-    <div id="modal-form" class="modal active">
-      <div class="modal-block">
-        <div class="modal-content">
+    <div class="modal">
+      <div id="modal-form">
+        <div class="modal-block">
+          <div class="modal-content">
+            <div class="modal-img">
+              <img src="icons/modal/button_close.svg" alt="#" />
+            </div>
+            <section class="form__content no-mg no-pd">
+              <p class="modal-title">Просто заполните форму заявки</p>
+              <p class="modal-subtitle">
+                и мы перезвоним вам в течении 10 минут
+              </p>
+              <form id="form-modal" action="#" class="form">
+                <input
+                  required
+                  type="name"
+                  placeholder="Ваше имя"
+                  name="name"
+                />
+                <input
+                  required
+                  type="number"
+                  placeholder="Ваш телефон"
+                  name="tel"
+                />
+                <input
+                  required
+                  type="email"
+                  placeholder="Ваш E-mail"
+                  name="email"
+                />
+                <button type="submit" id="before-feedback" class="form-button">
+                  Заказать консультацию
+                </button>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div id="feedback">
+        <div class="modal-block">
           <div class="modal-img">
             <img src="icons/modal/button_close.svg" alt="#" />
           </div>
-          <section class="form__content no-mg no-pd">
-            <p class="modal-title">Просто заполните форму заявки</p>
-            <p class="modal-subtitle">и мы перезвоним вам в течении 10 минут</p>
-            <form action="#" class="form">
-              <input type="name" placeholder="Ваше имя" name="name" />
-              <input type="number" placeholder="Ваш телефон" name="tel" />
-              <input type="email" placeholder="Ваш E-mail" name="email" />
-              <button id="before-feedback" class="form-button" type="submit">
-                Заказать консультацию
-              </button>
-            </form>
-          </section>
+          <div class="modal-content modal-feedback">
+            <section class="form__content no-mg no-pd">
+              <p class="modal-title">Спасибо за вашу заявку!</p>
+              <p class="modal-subtitle">
+                Наш менеджер свяжется с вами в ближайшее время!
+              </p>
+            </section>
+          </div>
         </div>
       </div>
     </div>
 
-    <div id="feedback" class="modal active">
-      <div class="modal-block">
-        <div class="modal-img">
-          <img src="icons/modal/button_close.svg" alt="#" />
-        </div>
-        <div class="modal-content modal-feedback">
-          <section class="form__content no-mg no-pd">
-            <p class="modal-title">Спасибо за вашу заявку!</p>
-            <p class="modal-subtitle">
-              Наш менеджер свяжется с вами в ближайшее время!
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
-
-    <div id="modal-order" class="modal active">
-      <div class="modal-block">
-        <div class="modal-img">
-          <img src="icons/modal/button_close.svg" alt="#" />
-        </div>
-        <div class="modal-content">
-          <section class="form__content no-mg no-pd">
-            <p class="modal-title">Ваш заказ:</p>
-            <p class="modal-subtitle">Пульсометр Polar FT1</p>
-            <form action="#" class="form">
-              <input type="name" placeholder="Ваше имя" name="name" />
-              <input type="number" placeholder="Ваш телефон" name="tel" />
-              <input type="email" placeholder="Ваш E-mail" name="email" />
-              <button id="before-feedback" class="form-button" type="submit">
-                Купить
-              </button>
-            </form>
-          </section>
+    <div class="modal">
+      <div id="modal-order">
+        <div class="modal-block">
+          <div class="modal-img">
+            <img src="icons/modal/button_close.svg" alt="#" />
+          </div>
+          <div class="modal-content">
+            <section id="order_section" class="form__content no-mg no-pd">
+              <form action="#" class="form form-order">
+                <input
+                  required
+                  type="name"
+                  placeholder="Ваше имя"
+                  name="name"
+                />
+                <input
+                  required
+                  type="number"
+                  placeholder="Ваш телефон"
+                  name="tel"
+                />
+                <input
+                  required
+                  type="email"
+                  placeholder="Ваш E-mail"
+                  name="email"
+                />
+                <button type="submit" id="before-feedback" class="form-button">
+                  Купить
+                </button>
+              </form>
+            </section>
+          </div>
         </div>
       </div>
     </div>
@@ -204,11 +240,21 @@
           <h2 class="form-description">
             Просто заполните форму заявки и мы перезвоним вам в течении 10 минут
           </h2>
-          <form action="#" class="form">
-            <input type="name" placeholder="Ваше имя" name="name" />
-            <input type="number" placeholder="Ваш телефон" name="tel" />
-            <input type="email" placeholder="Ваш E-mail" name="email" />
-            <button class="form-button" type="submit">
+          <form id="default_form" action="#" class="form">
+            <input required type="name" placeholder="Ваше имя" name="name" />
+            <input
+              required
+              type="number"
+              placeholder="Ваш телефон"
+              name="tel"
+            />
+            <input
+              required
+              type="email"
+              placeholder="Ваш E-mail"
+              name="email"
+            />
+            <button id="before_feedback" class="form-button" type="submit">
               Заказать консультацию
             </button>
           </form>
@@ -285,7 +331,11 @@
                 <div class="catalog__old-price">2 400 грн.</div>
                 <div class="catalog__price">2 100 грн.</div>
               </div>
-              <button id="before-form" class="catalog__buy-button">
+              <button
+                data-value="Polar FT1"
+                id="before-order"
+                class="catalog__buy-button"
+              >
                 КУПИТЬ
               </button>
             </div>
@@ -340,7 +390,11 @@
                 <div class="catalog__old-price">3 320 грн.</div>
                 <div class="catalog__price">3 100 грн.</div>
               </div>
-              <button id="before-form" class="catalog__buy-button">
+              <button
+                data-value="Suunto M2"
+                id="before-order"
+                class="catalog__buy-button"
+              >
                 КУПИТЬ
               </button>
             </div>
@@ -395,7 +449,11 @@
                 <div class="catalog__old-price">3 900 грн.</div>
                 <div class="catalog__price">3 500 грн.</div>
               </div>
-              <button id="before-form" class="catalog__buy-button">
+              <button
+                data-value="Suunto M3"
+                id="before-order"
+                class="catalog__buy-button"
+              >
                 КУПИТЬ
               </button>
             </div>
@@ -450,7 +508,11 @@
                 <div class="catalog__old-price">2 750 грн.</div>
                 <div class="catalog__price">2 500 грн.</div>
               </div>
-              <button id="before-form" class="catalog__buy-button">
+              <button
+                data-value="Polar FT2"
+                id="before-order"
+                class="catalog__buy-button"
+              >
                 КУПИТЬ
               </button>
             </div>
@@ -505,7 +567,11 @@
                 <div class="catalog__old-price">3 320 грн.</div>
                 <div class="catalog__price">3 100 грн.</div>
               </div>
-              <button id="before-form" class="catalog__buy-button">
+              <button
+                data-value="Suunto M2"
+                id="before-order"
+                class="catalog__buy-button"
+              >
                 КУПИТЬ
               </button>
             </div>
@@ -560,7 +626,11 @@
                 <div class="catalog__old-price">3 350 грн.</div>
                 <div class="catalog__price">3 150 грн.</div>
               </div>
-              <button id="before-form" class="catalog__buy-button">
+              <button
+                data-value="Polar FT4"
+                id="before-order"
+                class="catalog__buy-button"
+              >
                 КУПИТЬ
               </button>
             </div>
