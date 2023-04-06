@@ -27,6 +27,7 @@ function openModal(button, form, formParent) {
     item.addEventListener('click', (e) => {
       e.preventDefault();
       body.style.overflow = 'hidden';
+      body.style.marginRight = 'calc(-1 * (100vw - 100%))';
       if (formParent.style.opacity != '1') {
         formParent.style.opacity = 1;
       }
