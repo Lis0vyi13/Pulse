@@ -47,6 +47,7 @@ function closeModal(modal, elem) {
           elem.style.opacity = '0';
           hidden(modal);
           body.style.overflow = 'auto';
+          body.style.overflowX = 'hidden';
         }
       });
     });
