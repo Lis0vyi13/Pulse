@@ -28,6 +28,10 @@
     <link rel="stylesheet" href="css/style.min.css" />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
     />
   </head>
@@ -132,7 +136,7 @@
 
     <header class="header">
       <div class="container">
-        <nav class="nav">
+        <nav class="nav wow animate__animated animate__fadeInDown">
           <div class="nav__logo">
             <a href="#">
               <img src="icons/logo.png" alt="#" />
@@ -161,10 +165,23 @@
       <div class="container">
         <div class="intro__content">
           <section class="intro__text">
-            <h1 class="intro__title">Подбор пульсометра</h1>
-            <h2 class="intro__subtitle">с учётом Вашего уровня подготовки</h2>
+            <h1
+              class="intro__title wow animate__animated animate__fadeInDown"
+              data-wow-delay="0.4s"
+            >
+              Подбор пульсометра
+            </h1>
+            <h2
+              class="intro__subtitle wow animate__animated animate__fadeInDown"
+              data-wow-delay="0.5s"
+            >
+              с учётом Вашего уровня подготовки
+            </h2>
           </section>
-          <div class="intro__details">
+          <div
+            class="intro__details wow animate__animated animate__fadeIn"
+            data-wow-delay="0.3s"
+          >
             <div class="intro__details-item">
               <img
                 src="icons/intro/019_timer_time_stopwatch_2-64.png"
@@ -185,12 +202,15 @@
               </p>
             </div>
           </div>
-          <div class="intro__order">
+          <div class="intro__order wow animate__animated animate__fadeInUp">
             <a id="before-form" class="intro__button" href="#"
               >Заказать консультацию</a
             >
             <p>
-              или <a class="intro__order-link" href="#">Перейти в каталог</a>
+              или
+              <a class="intro__order-link" href="#pulse-ctg"
+                >Перейти в каталог</a
+              >
             </p>
           </div>
         </div>
@@ -199,9 +219,17 @@
     <div class="advantages">
       <div class="container">
         <section class="advantages__content">
-          <h1 class="title">НАШИ ПРЕИМУЩЕСТВА</h1>
+          <h1
+            class="title wow animate__animated animate__fadeInDown"
+            data-wow-delay="0.25s"
+          >
+            НАШИ ПРЕИМУЩЕСТВА
+          </h1>
           <div class="advantages__list">
-            <div class="advantages__list-item">
+            <div
+              class="advantages__list-item wow animate__animated animate__fadeIn"
+              data-wow-delay="0.4s"
+            >
               <img id="cup" src="icons/advantages/cup.png" alt="#" />
               <p class="advantages__list-item-title">Делимся опытом</p>
               <p class="description advantages__description">
@@ -210,7 +238,10 @@
                 соревнованиям по триатлону!
               </p>
             </div>
-            <div class="advantages__list-item">
+            <div
+              class="advantages__list-item wow animate__animated animate__fadeIn"
+              data-wow-delay="0.4s"
+            >
               <img id="heart" src="icons/advantages/heart.png" alt="#" />
               <p class="advantages__list-item-title">Заботимся о здоровье</p>
               <p class="description advantages__description">
@@ -218,7 +249,10 @@
                 Вашему здоровью и были в радость Вам и Вашим близким!
               </p>
             </div>
-            <div class="advantages__list-item">
+            <div
+              class="advantages__list-item wow animate__animated animate__fadeIn"
+              data-wow-delay="0.4s"
+            >
               <img id="boot" src="icons/advantages/shoe.png" alt="#" />
               <p class="advantages__list-item-title">Учим бегать</p>
               <p class="description advantages__description">
@@ -234,13 +268,22 @@
     <div class="form-block">
       <div class="container">
         <section class="form__content">
-          <h1 class="title _form-title">
+          <h1
+            class="title _form-title wow animate__animated animate__fadeInLeft"
+          >
             Получите бесплатную консультацию по подбору пульсометра
           </h1>
-          <h2 class="form-description">
+          <h2
+            class="form-description wow animate__animated animate__fadeInLeft"
+            data-wow-delay="0.15s"
+          >
             Просто заполните форму заявки и мы перезвоним вам в течении 10 минут
           </h2>
-          <form id="default_form" action="#" class="form">
+          <form
+            id="default_form"
+            action="#"
+            class="form wow animate__animated animate__fadeInUp"
+          >
             <input required type="name" placeholder="Ваше имя" name="name" />
             <input
               required
@@ -272,8 +315,13 @@
     </div>
     <div class="catalog">
       <div class="container">
-        <h1 class="title">Каталог пульсометров</h1>
-        <div class="catalog__tabs">
+        <h1
+          id="pulse-ctg"
+          class="title wow animate__animated animate__fadeInDown"
+        >
+          Каталог пульсометров
+        </h1>
+        <div class="catalog__tabs wow animate__animated animate__fadeIn">
           <button class="catalog__tab catalog__tab-active">
             <p>Для фитнеса</p>
           </button>
@@ -281,7 +329,11 @@
           <button class="catalog__tab"><p>для триатлона</p></button>
         </div>
         <div class="catalog__list">
-          <div class="catalog__list-item" data-filter="fitness, run">
+          <div
+            class="catalog__list-item wow animate__animated animate__fadeIn"
+            data-wow-delay="0.2s"
+            data-filter="fitness, run"
+          >
             <div class="catalog-upper">
               <div class="catalog__item-front">
                 <div class="catalog__list-item_top">
@@ -340,7 +392,11 @@
               </button>
             </div>
           </div>
-          <div class="catalog__list-item" data-filter="fitness">
+          <div
+            class="catalog__list-item wow animate__animated animate__fadeIn"
+            data-wow-delay="0.4s"
+            data-filter="fitness"
+          >
             <div class="catalog-upper">
               <div class="catalog__item-front">
                 <div class="catalog__list-item_top">
@@ -399,7 +455,11 @@
               </button>
             </div>
           </div>
-          <div class="catalog__list-item" data-filter="fitness, run, triatlon">
+          <div
+            class="catalog__list-item wow animate__animated animate__fadeIn"
+            data-filter="fitness, run, triatlon"
+            data-wow-delay="0.5s"
+          >
             <div class="catalog-upper">
               <div class="catalog__item-front">
                 <div class="catalog__list-item_top">
@@ -458,7 +518,11 @@
               </button>
             </div>
           </div>
-          <div class="catalog__list-item" data-filter="fitness, run">
+          <div
+            class="catalog__list-item wow animate__animated animate__fadeIn"
+            data-filter="fitness, run"
+            data-wow-delay="0.3s"
+          >
             <div class="catalog-upper">
               <div class="catalog__item-front">
                 <div class="catalog__list-item_top">
@@ -517,7 +581,11 @@
               </button>
             </div>
           </div>
-          <div class="catalog__list-item" data-filter="fitness, run">
+          <div
+            class="catalog__list-item wow animate__animated animate__fadeIn"
+            data-filter="fitness, run"
+            data-wow-delay="0.4s"
+          >
             <div class="catalog-upper">
               <div class="catalog__item-front">
                 <div class="catalog__list-item_top">
@@ -576,7 +644,11 @@
               </button>
             </div>
           </div>
-          <div class="catalog__list-item" data-filter="fitness, triatlon">
+          <div
+            class="catalog__list-item wow animate__animated animate__fadeIn"
+            data-filter="fitness, triatlon"
+            data-wow-delay="0.5s"
+          >
             <div class="catalog-upper">
               <div class="catalog__item-front">
                 <div class="catalog__list-item_top">
@@ -642,7 +714,7 @@
       <div class="container">
         <h1 class="title">отзывы клиентов</h1>
         <div class="reviews__cards">
-          <div class="reviews__card">
+          <div class="reviews__card wow animate__animated animate__fadeInUp">
             <div class="reviews__card-img">
               <img src="img/reviews/photo_1.png" alt="#" />
             </div>
@@ -659,7 +731,7 @@
               <p class="reviews__card-review">Спасибо, RunSmart!</p>
             </div>
           </div>
-          <div class="reviews__card">
+          <div class="reviews__card wow animate__animated animate__fadeInUp">
             <div class="reviews__card-img">
               <img src="img/reviews/photo_2.png" alt="#" />
             </div>
@@ -678,7 +750,7 @@
               </p>
             </div>
           </div>
-          <div class="reviews__card">
+          <div class="reviews__card wow animate__animated animate__fadeInUp">
             <div class="reviews__card-img">
               <img src="img/reviews/photo_3.png" alt="#" />
             </div>
@@ -702,7 +774,7 @@
         </div>
       </div>
     </div>
-    <div class="google-map">
+    <div class="google-map wow animate__animated animate__fadeInUp">
       <div class="map">
         <iframe
           class="phones"
@@ -987,6 +1059,10 @@
         </div>
       </div>
     </div>
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/tabs.js"></script>

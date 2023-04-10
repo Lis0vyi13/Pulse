@@ -10,27 +10,37 @@ const beforeOrderElements = document.querySelectorAll('#before-order');
 const formOrder = document.querySelector('.form-order');
 const orderSection = document.querySelector('#order_section');
 
-openModal(beforeFormElements, modalForm, modalForm.parentElement);
-formsSubmit(modalForm);
-order();
-
 function show(element) {
+  if (element.style.display != 'block') {
+    element.style.display = 'block';
+  }
   element.classList.add('active');
+  element.style.zIndex = '1';
+  setTimeout(() => {
+    element.style.opacity = '1';
+  }, 10);
 }
 
-function hidden(element) {
-  element.classList.remove('active');
+function hide(element) {
+  element.style.opacity = '1';
+  element.style.display = 'block';
+  element.style.zIndex = '1';
+  setTimeout(() => {
+    element.style.opacity = '0';
+    setTimeout(() => {
+      element.classList.remove('active');
+      element.style.display = 'none';
+      element.style.zIndex = '-1';
+    }, 100);
+  }, 0);
 }
 
-function openModal(button, form, formParent) {
-  button.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      e.preventDefault();
+function openModal(buttons, form, formParent) {
+  buttons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
       body.style.overflow = 'hidden';
-      body.style.marginRight = 'calc(-1 * (100vw - 100%))';
-      if (formParent.style.opacity != '1') {
-        formParent.style.opacity = 1;
-      }
+      formParent.style.opacity = '1';
       form.style.opacity = '1';
       show(formParent);
       closeModal(formParent, form);
@@ -40,12 +50,12 @@ function openModal(button, form, formParent) {
 
 function closeModal(modal, elem) {
   if (modal.classList.contains('active')) {
-    closeButton.forEach(function (item) {
-      modal.addEventListener('click', function (e) {
-        const target = e.target;
+    closeButton.forEach((item) => {
+      modal.addEventListener('click', (event) => {
+        const target = event.target;
         if (target === item || !target.closest('.modal-block')) {
           elem.style.opacity = '0';
-          hidden(modal);
+          hide(modal);
           body.style.overflow = 'auto';
           body.style.overflowX = 'hidden';
         }
@@ -56,39 +66,34 @@ function closeModal(modal, elem) {
 
 function showFeedback(formParent) {
   feedback.style.opacity = '1';
-  hidden(formParent);
+  hide(formParent);
   show(feedback.parentElement);
   closeModal(feedback.parentElement, formParent);
 }
 
-function formsSubmit(formElem) {
+function handleFormSubmit(formElem) {
   forms.forEach((form) => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
       body.style.overflow = 'hidden';
-      hidden(formElem.parentElement);
+      hide(formElem.parentElement);
       formElem.style.opacity = '0';
       showFeedback(formElem.parentElement);
       closeModal(feedback.parentElement, feedback);
-      console.log(123);
     });
   });
 }
 
-function order() {
-  beforeOrderElements.forEach(function (element) {
+function handleOrderClick() {
+  beforeOrderElements.forEach((element) => {
     element.addEventListener('click', () => {
+      body.style.overflow = 'hidden';
       document
         .querySelectorAll('#order_section .modal-subtitle')
-        .forEach(function (el) {
-          el.remove();
-        });
+        .forEach((el) => el.remove());
       document
         .querySelectorAll('#order_section .modal-title')
-        .forEach(function (el) {
-          el.remove();
-        });
-
+        .forEach((el) => el.remove());
       const name = element.getAttribute('data-value');
       orderSection.insertAdjacentHTML(
         'afterbegin',
@@ -100,8 +105,16 @@ function order() {
       closeModal(modalOrder.parentElement, modalOrder);
       formOrder.addEventListener('submit', () => {
         modalOrder.style.opacity = '0';
-        hidden(modalOrder.parentElement);
+        hide(modalOrder.parentElement);
       });
     });
   });
 }
+
+function init() {
+  openModal(beforeFormElements, modalForm, modalForm.parentElement);
+  handleFormSubmit(modalForm);
+  handleOrderClick();
+}
+
+init();
