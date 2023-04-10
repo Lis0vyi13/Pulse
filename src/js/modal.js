@@ -15,24 +15,26 @@ function show(element) {
     element.style.display = 'block';
   }
   element.classList.add('active');
+  element.classList.add('animate__animated');
+  element.classList.add('animate__fadeIn');
   element.style.zIndex = '1';
   setTimeout(() => {
     element.style.opacity = '1';
-  }, 10);
+  }, 0);
 }
 
 function hide(element) {
-  element.style.opacity = '1';
-  element.style.display = 'block';
-  element.style.zIndex = '1';
+  element.classList.remove('animate__fadeIn');
+  element.classList.remove('animate__animated');
+
   setTimeout(() => {
     element.style.opacity = '0';
     setTimeout(() => {
       element.classList.remove('active');
       element.style.display = 'none';
       element.style.zIndex = '-1';
-    }, 100);
-  }, 0);
+    }, 400);
+  }, 10);
 }
 
 function openModal(buttons, form, formParent) {
