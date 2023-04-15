@@ -1,5 +1,3 @@
-'use strict';
-
 const frontLinks = document.querySelectorAll('#front-link');
 const backLinks = document.querySelectorAll('#back-link');
 const catalogUpperContent = document.querySelectorAll('.catalog-upper');

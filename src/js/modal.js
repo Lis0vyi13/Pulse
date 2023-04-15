@@ -73,10 +73,30 @@ function showFeedback(formParent) {
   closeModal(feedback.parentElement, formParent);
 }
 
+// const postForm = (url, data) => {
+//   fetch(url, {
+//     method: 'POST',
+//     headers: {
+//       'Content-type': 'application/json',
+//     },
+//     body: data,
+//   })
+//     .then((response) => response.json())
+//     .then((data) => console.log(data))
+//     .catch((error) => console.error(error));
+// };
+
 function handleFormSubmit(formElem) {
   forms.forEach((form) => {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // const formData = new FormData(form);
+      // const jsonData = {};
+      // formData.forEach((value, key) => {
+      //   jsonData[key] = value;
+      // });
+      // postForm('http://localhost:3000/people', JSON.stringify(jsonData));
+
       body.style.overflow = 'hidden';
       hide(formElem.parentElement);
       formElem.style.opacity = '0';
