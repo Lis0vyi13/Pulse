@@ -14,7 +14,8 @@ function catalogLinks(linkArray) {
 
 catalogLinks(frontLinks);
 catalogLinks(backLinks);
-
+btnUp.style.opacity = "0";
+btnUp.style.pointerEvents = "none";
 document.addEventListener("scroll", function () {
   if (scrollY < document.documentElement.clientHeight) {
     btnUp.style.opacity = "0";
